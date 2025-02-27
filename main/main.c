@@ -16,6 +16,8 @@ bool buzzer_state = false;
 
 static const char *TAG = "MAIN";
 
+// TOPRAK PROJEYE DAHIL OLDU 
+
 void app_main(void) {
     gpio_init();
     wifi_init();  // Wi-Fi bağlantısını başlat
