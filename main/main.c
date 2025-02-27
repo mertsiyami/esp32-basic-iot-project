@@ -10,12 +10,9 @@
 #include "wifi_service.h"  // Wi-Fi bağlantısı için fonksiyonlar
 #include "gpio_service.h"  // GPIO pinlerinin yapılandırılması için fonksiyonlar
 
-
-
 bool wifi_status;
-
-bool led_state = false;  // LED durumu
-bool buzzer_state = false;  // Buzzer durumu
+bool led_state = false; 
+bool buzzer_state = false;  
 
 static const char *TAG = "MAIN";
 
