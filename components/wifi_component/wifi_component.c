@@ -5,6 +5,7 @@
 #include "nvs_flash.h"
 #include "esp_netif.h"
 #include "lwip/dns.h"
+#include "wifi_component.h"
 
 #define WIFI_SSID "FiberHGW_HUX7CK"  // Bağlanılacak Wi-Fi SSID
 #define WIFI_PASS "edpJDzux3d7H"    // Bağlanılacak Wi-Fi şifresi
