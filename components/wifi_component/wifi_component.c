@@ -79,4 +79,6 @@ void wifi_init(void) {
     ESP_ERROR_CHECK(esp_wifi_connect());  // Wi-Fi'ye bağlan
 
     ESP_LOGI(TAG, "Wi-Fi'ye bağlanılıyor...");
+
+    vTaskDelay(pdMS_TO_TICKS(5000));  // Wi-Fi'ye bağlanabilmesi için yeterince bekleyin
 }

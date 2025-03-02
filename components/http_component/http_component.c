@@ -27,29 +27,30 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt) {
 
                 // "led" ve "buzzer" öğelerini al
                 const cJSON *led = cJSON_GetObjectItem(json, "led");
-                const cJSON *buzzer = cJSON_GetObjectItem(json, "buzzer");
+                const cJSON *led_speed = cJSON_GetObjectItem(json, "led_speed");
                 const cJSON *fan = cJSON_GetObjectItem(json, "fan");
                 const cJSON *fan_speed = cJSON_GetObjectItem(json, "fan_speed");
+                const cJSON *sg90 = cJSON_GetObjectItem(json, "sg90");
 
                 if (cJSON_IsBool(led)) {
                     led_state = cJSON_IsTrue(led);  // LED durumunu güncelle
                     ESP_LOGI(TAG, "LED state: %s", led_state ? "ON" : "OFF");
                 }
-
-                if (cJSON_IsBool(buzzer)) {
-                    buzzer_state = cJSON_IsTrue(buzzer);  // Buzzer durumunu güncelle
-                    ESP_LOGI(TAG, "Buzzer state: %s", buzzer_state ? "ON" : "OFF");
+                if (cJSON_IsBool(led_speed)) {
+                    led_speed_state = cJSON_IsTrue(led_speed);  // Buzzer durumunu güncelle
+                    ESP_LOGI(TAG, "Led speed state: %s", led_speed_state? "ON" : "OFF");
                 }
-
                 if (cJSON_IsBool(fan)) {
                     fan_state = cJSON_IsTrue(fan);  // Buzzer durumunu güncelle
                     ESP_LOGI(TAG, "Fan state: %s", fan_state ? "ON" : "OFF");
                 }
-
-                
                 if (cJSON_IsBool(fan_speed)) {
                     fan_speed_state = cJSON_IsTrue(fan_speed);  // Buzzer durumunu güncelle
                     ESP_LOGI(TAG, "Fan speed state: %s", fan_speed_state ? "ON" : "OFF");
+                }
+                if (cJSON_IsBool(sg90)) {
+                    sg90_state = cJSON_IsTrue(sg90);  // Buzzer durumunu güncelle
+                    ESP_LOGI(TAG, "Sg90 state: %s", sg90_state ? "ON" : "OFF");
                 }
 
                 cJSON_Delete(json);
